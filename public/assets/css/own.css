@@ -1,0 +1,146 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+.congress {
+    width: 5rem;
+    height: 5rem;
+}
+
+
+/*.videocongress {*/
+/*    width:560px;*/
+/*    height:315px;*/
+/*    z-index: 1 !important;*/
+/*    bottom:0;*/
+/*    background-image: url("public/assets/img/video.png");*/
+/*}*/
+img{
+    width:50%;
+    height:50%;
+    z-index: 1 !important;
+    top:0;
+    right:0;
+    margin-left: 25%;
+    
+}
+.button {
+    text-align: center;
+    border-radius:1rem;
+    background-color:white;
+    padding:3%;
+    background-color:black;
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+h5 {
+    text-align: center;
+}
+
+.margin {
+    
+    margin: 2em!important;
+    
+}
+
+.container2{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.form2 {
+    display:flex;
+}
+.left{
+    margin: 4em!important;
+    border-radius:1rem;
+}
+.right{
+    margin: 4em!important;
+    border-radius:1rem;
+}
+
+.margin{
+    display:flex;
+}
+
+.input-group-addon{
+    padding-right:2em!important;
+}
+
+/*
+    dragdrop
+*/
+
+body {
+margin: 0;
+background-color: #2f3238;
+font-family: sans-serif;
+color: #222;
+}
+
+.form-content {
+margin: 1em auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.drop-zone {
+width: 75%;
+margin-bottom: 1.5em;
+height: 300px;
+background-color: #838383;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+font-size: 1.5em;
+border: 5px dashed #caced6;
+cursor: pointer;
+}
+
+.drop-zone_active {
+border: 5px solid #caced6;
+background-color: #414141;
+color: #caced6;
+}
+
+.icono-upload {
+height: 80px;
+fill: currentColor;
+}
+
+.form {
+width: 100%;
+text-align: center;
+}
+
+.form-button {
+background-color: #28a745;
+border: none;
+padding: .8em 1em;
+border-radius: 15px;
+color: #fff;
+text-transform: uppercase;
+font-size: 18px;
+cursor: pointer;
+}
+
+.hide {
+display: none;
+}
+
