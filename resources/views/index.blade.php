@@ -68,15 +68,18 @@
         <footer class="container">
             <p>&copy; Congress</p>
         </footer>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script>window.jQuery || document.write('<script src="{{ url('assets/js/jquery-3.3.1.slim.min.js') }}"><\/script>')</script>
-        <!-- PROBLEMA -->
-        <script src="{{ url('assets/js/bootstrap.bundle.min.js') }}"></script><!-- PROBLEMA -->
-        <!-- propio  ajax   pero calmero meteria un placeholder      en las paginas que quieres verlo lo cargas y los que no --> 
-        <script src="{{ url('assets/js/mio.js') }}"></script>
-        <script src="{{ url('assets/js/mio2.js') }}"></script>
-        <!-- --> 
-        <script src="{{ url('assets/js/main-form.js') }}"></script>
+        
         
     </body>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ url('assets/js/jquery-3.3.1.slim.min.js') }}"><\/script>')</script>
+    <!-- PROBLEMA -->
+    <script src="{{ url('assets/js/bootstrap.bundle.min.js') }}"></script><!-- PROBLEMA -->
+    <!-- propio  ajax   pero calmero meteria un placeholder      en las paginas que quieres verlo lo cargas y los que no --> 
+    <script src="{{ url('assets/js/mio.js') }}"></script>
+    <script src="{{ url('assets/js/mio2.js') }}"></script>
+    <!-- --> 
+    <script src="{{ url('assets/js/main-form.js') }}"></script>
 </html>
