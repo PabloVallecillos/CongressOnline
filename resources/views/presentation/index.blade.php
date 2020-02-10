@@ -2,23 +2,19 @@
 
 @section('content')
 
-    @isset($alertMessage)
-        @include('include.alert')
-    @endisset
     <div class="container">
         <div class="column justify-content-center">
           @foreach($presentations as $presentation)
             <div class="col-md-12">
                 <div class="card-deck">
-                      <div class="card">
+                      <div class="card margintop">
                             <div class="card-body">
-                              <h3 class="card-title">{{ $presentation->id }}</h3>
-                              <h3 class="card-title">{{ $presentation->tittle }}</h3>
+                              <h3 class="card-title button2">{{ $presentation->tittle }}</h3>
                               <p class="card-text"></p>
                               
                               
                                 <div class="videocongress">
-                                    <img src="{{ asset('assets/img/video.png') }}"></img>
+                                    <img src="{{ asset('assets/img/congress.jpg') }}"></img>
                                 </div>
                                   <iframe 
                                       width="560"
@@ -30,7 +26,8 @@
                                   </iframe>
                                 
                               @auth
-                                  <a class="button" href="{{url('asistant/'.$presentation->id)}}" role="button">INSCRIBIRME &raquo;</a> 
+                              
+                                  <a class="button btn btn-light my-2 my-sm-0 big" href="{{url('asistant/'.$presentation->id)}}" role="button">Subscribe <i class="fa fa-share" style="font-size:2.5rem" aria-hidden="true"></i></a> 
                               @endauth
                             </div>
                         <div class="card-footer">

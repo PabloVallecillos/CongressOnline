@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class PayCongress extends Model
 {
-    protected $table    = 'pay';
+    protected $table    = 'pay_congresses';
 
     protected $hidden   = ['created_at','updated_at']; 
 

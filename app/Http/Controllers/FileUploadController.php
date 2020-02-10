@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Presentation;
+use App\PayCongress;
+use App\User;
 
 class FileUploadController extends Controller
 {
@@ -15,16 +17,28 @@ class FileUploadController extends Controller
     
     function upload(Request $request, $presentationid){
          $presentations = DB::table('presentations')->find($presentationid);
+         
+         
+          
         if($request->hasFile('file') && $request->file('file')->isValid()){     
             $file = $request->file('file');   
             $target = '../../upload/';  
             $name =   $presentations->id .'.'. $file->getClientOriginalExtension();
             $file->move($target, $name);
        }
+        
+        $payCongress = new PayCongress([
+            'document' =>  $presentations->id .'.'. $file->getClientOriginalExtension(),
+            'check' => false,
+         ]);
+         //ljkjkl
+         $payCongress->user()->associate(\Auth::user()->id);
+         $payCongress->push();
+         
+         $payCongress->save(); 
        header("Cache-Control: no-cache, must-revalidate");
        header("Location: http://informatica.ieszaidinvergeles.org:9040/DEFINITIVE/public/subir");
        return redirect('subir');
-        //return response()->file($target . $name); 
         
     }
     
@@ -43,7 +57,7 @@ class FileUploadController extends Controller
             '9' => '9.pdf',
         ];
         header("Cache-Control: no-cache, must-revalidate");
-       header("Location: http://informatica.ieszaidinvergeles.org:9040/DEFINITIVE/public/subir");
+        header("Location: http://informatica.ieszaidinvergeles.org:9040/DEFINITIVE/public/subir");
         $nombre_fichero ='../../upload/'.$archivo.'.pdf';
         $mostrar = 'default.png';
         if(file_exists($nombre_fichero)){

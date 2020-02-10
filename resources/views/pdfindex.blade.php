@@ -1,24 +1,26 @@
 @extends('index')
 
 @section('content')
-<table class="table table-striped">
+<table class="table-md table-striped ">
   <thead>
-    <th>ID</th>
-    <th>Full Name</th>
-    <th>Address</th>
-    <th>City</th>
-    <th>Zip Code</th>
-    <th>Action</th>
+    
+    <th class="thb">Name</th>
+    <th class="thb">Last Name</th>
+    <th class="thb">Phone</th>
+    <th class="thb">Email</th>
+    <th class="thb">Card</th>
+    <th class="thb">Action</th>
   </thead>
   <tbody>
     @foreach($users as $user)
     <tr>
-      <td>{{$user->id}}</td>
-      <td>{{$user->first_name}}</td>
-      <td>{{$user->last_name}}</td>
-      <td>{{$user->phone}}</td>
-      <td>{{$user->email}}</td>
-      <td><a href="{{action('pdfDetailController@downloadPDF', $user->id)}}">PDF</a></td>
+      
+      <td class="tdb">{{$user->first_name}}</td>
+      <td class="tdb">{{$user->last_name}}</td>
+      <td class="tdb">{{$user->phone}}</td>
+      <td class="tdb">{{$user->email}}</td>
+      <td class="tdb">{{$user->card}}</td>
+      <td class="tdb"><a href="{{action('pdfDetailController@downloadPDF', $user->id)}}">PDF</a></td>
     </tr>
     @endforeach
   </tbody>

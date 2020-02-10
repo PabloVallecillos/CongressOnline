@@ -4,11 +4,39 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\pdfDetail;
-
+use App\Presentation;
+use Illuminate\Support\Facades\DB;
 
 class pdfDetailController extends Controller
 {
 
+    // public function store(Request $request){
+
+    //   $user = new pdfDetail([
+    //     'first_name' => $request->get('first_name'),
+    //     'last_name' => $request->get('last_name'),
+    //     'card' => $request->get('card'),
+    //     'email' => $request->get('email'),
+    //     'phone' => $request->get('phone')
+    //   ]);
+
+    //   $user->save();
+    //   $users = pdfDetail::all();
+
+    //   return redirect('pdfindex')->with('users' , $users);
+    // }
+  
+    
+    // public function downloadPDF($id){
+      
+    //   $user = pdfDetail::find($id);
+
+    //   $pdf = \PDF::loadView('pdfwrite', compact('user'));
+    //   return $pdf->download('Certificate.pdf');
+
+    // }
+    
+    
     public function store(Request $request){
 
       $user = new pdfDetail([

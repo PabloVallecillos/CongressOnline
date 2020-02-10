@@ -3,6 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Response;
 
 class AdminMiddleware
 {
@@ -15,10 +17,10 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-         $user = \Illuminate\Support\Facades\Auth::user();
-        if($user === null || $user->email !== 'vallecillostyler2@gmail.com'){  // entonces no es admin
-            return redirect(url('/'));
+        
+        if (Auth::check() && Auth::User()->type=='admin') {
+            return $next($request);
         }
-        return $next($request);
+        return redirect(url('/'));
     }
 }

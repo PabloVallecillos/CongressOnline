@@ -38,7 +38,7 @@ class UserController extends Controller
         $messages = [
             'passwordok'    => 'la clave de acceso ha sido modificada correctamente',
             'passwordko'    => 'No se ha podido modificar la clave de acceso',
-            'useredit'      =>  'Usuario editado',
+            'useredit'      => 'Usuario editado',
         ];
         $opSession = $request->session()->get('op');
         $alertMessage = null;

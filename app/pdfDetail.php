@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class pdfDetail extends Model
 {
-    protected $table    = 'pdfDetail';
+    protected $table    = 'pdf_details';
 
     protected $hidden   = ['created_at','updated_at']; 
 

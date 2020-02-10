@@ -9,7 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains t-zz+--zz
 */
-//Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('me');
 
 /*Route::get('/', function () {
     return view('index');
@@ -19,8 +19,8 @@
 Route::get('/', 'IndexController@presentation');
 Route::get('asistant/{presentationid?}', 'IndexController@asistant');
 Route::get('asistant/{presentationid?}/pdf', 'IndexController@pdf2');
-Route::get('pdfindex', 'pdfDetailController@index');
 
+Route::get('pdfindex', 'pdfDetailController@index');
 Route::post('submitForm','pdfDetailController@store');
 
 Route::get('/downloadPDF/{id}','pdfDetailController@downloadPDF');
@@ -64,9 +64,11 @@ Route::resource('user', 'UserController')->except(['index', 'create', 'show', 's
 Route::get('user', 'IndexController@edit');
 Route::get('user', 'PokemonController@store');
 
- Route::get('user', 'UserController@edit')->middleware('auth'); // ya que estas ya verificado no hace falta verify
- Route::put('user', 'UserController@update')->middleware('auth');
- Route::put('user/password', 'UserController@password')->middleware('auth');
+Route::get('user', 'UserController@edit')->middleware('auth'); // ya que estas ya verificado no hace falta verify
+Route::get('/user/{userid}/presentationCreate', 'IndexController@presentationCreate')->middleware('auth'); // ya que estas ya verificado no hace falta verify
+Route::post('storePresentation','IndexController@storePresentation');
+Route::put('user', 'UserController@update')->middleware('auth');
+Route::put('user/password', 'UserController@password')->middleware('auth');
 
 // // Route::resource('pokemon', 'PokemonController');
 // // Route::get('pokemon/image/{pokemonid}', 'PokemonController@imageid');  //sabes su nombre pero no su extension  si no tienes la info bdd image src  =  route(pokemonid)  ruta a alguna pagina php que te diga que esa es la imagen
